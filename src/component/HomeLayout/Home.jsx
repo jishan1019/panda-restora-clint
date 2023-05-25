@@ -1,9 +1,10 @@
 import React from 'react';
+import Cover from './Cover/Cover';
 
 const Home = () => {
     return (
         <div>
-            Home
+            <Cover />
         </div>
     );
 };
