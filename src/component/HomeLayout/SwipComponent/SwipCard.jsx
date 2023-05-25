@@ -36,23 +36,23 @@ const SwipCard = () => {
             >
                 <SwiperSlide>
                     <img src={img1} alt="" />
-                    <h3 className='text-4xl text-center -mt-20 text-white uppercase'>SALADS</h3>
+                    <h3 className='text-4xl text-center hidden md:block -mt-20 text-white uppercase'>SALADS</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img2} alt="" />
-                    <h3 className='text-4xl text-center -mt-20 text-white uppercase'>pizza</h3>
+                    <h3 className='text-4xl text-center -mt-20 hidden md:block text-white uppercase'>pizza</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img3} alt="" />
-                    <h3 className='text-4xl text-center -mt-20 text-white uppercase'>soups</h3>
+                    <h3 className='text-4xl text-center -mt-20 hidden md:block text-white uppercase'>soups</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img4} alt="" />
-                    <h3 className='text-4xl text-center -mt-20 text-white uppercase'>Desserts</h3>
+                    <h3 className='text-4xl text-center -mt-20 hidden md:block text-white uppercase'>Desserts</h3>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img5} alt="" />
-                    <h3 className='text-4xl text-center -mt-16 text-white uppercase'>SuPUS</h3>
+                    <h3 className='text-4xl text-center -mt-16 hidden md:block text-white uppercase'>SuPUS</h3>
                 </SwiperSlide>
 
             </Swiper>
