@@ -5,6 +5,7 @@ import FeedBack from './Feedback/FeedBack';
 import FromOurMenu from './FromOurMenuSection/FromOurMenu';
 import CallUsComponent from './CallUsComponent/CallUsComponent';
 import ChefRecomand from './ChefRecomand/ChefRecomand';
+import Fetured from './Fetured/Fetured';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <FromOurMenu />
             <CallUsComponent />
             <ChefRecomand />
+            <Fetured />
         </div>
     );
 };

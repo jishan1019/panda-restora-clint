@@ -13,7 +13,7 @@ const ChefRecomandCard = ({ item }) => {
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p>{description}</p>
-                    <div className="card-actions justify-center">
+                    <div className="card-actions mt-4 justify-center">
                         <button className="btn btn-primary bg-[#1F2937]">Add To Cart</button>
                     </div>
                 </div>
