@@ -3,6 +3,8 @@ import Cover from './Cover/Cover';
 import SwipCard from './SwipComponent/SwipCard';
 import FeedBack from './Feedback/FeedBack';
 import FromOurMenu from './FromOurMenuSection/FromOurMenu';
+import CallUsComponent from './CallUsComponent/CallUsComponent';
+import ChefRecomand from './ChefRecomand/ChefRecomand';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             <SwipCard />
             <FeedBack />
             <FromOurMenu />
+            <CallUsComponent />
+            <ChefRecomand />
         </div>
     );
 };

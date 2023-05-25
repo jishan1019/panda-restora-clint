@@ -1,0 +1,20 @@
+[
+    {
+        "_id": "1",
+        "name": "Classic Caesar Salad",
+        "description": "A traditional Caesar salad made with crisp romaine lettuce, hard-boiled eggs, grated Parmesan cheese, and grilled chicken breast fillets.",
+        "imageURL": "https://media.istockphoto.com/id/1199607353/photo/fresh-chicken-salad.jpg?s=612x612&w=0&k=20&c=7ve5H1SoEc358Ng1Nmce8X2iX4sYPlLI1hP62frrWmY="
+    },
+    {
+        "_id": "2",
+        "name": "Grilled Chicken Caesar Salad",
+        "description": "A flavorful twist on the classic Caesar salad featuring grilled chicken breast fillets, crisp lettuce, shaved Parmesan cheese, and a tangy Caesar dressing.",
+        "imageURL": "https://media.istockphoto.com/id/1337799015/photo/caesar-salad.jpg?s=612x612&w=0&k=20&c=ensriYgRJ9SJctMu3kl7rKn1RPEEBikbkmnAy0JfbSg="
+    },
+    {
+        "_id": "3",
+        "name": "Vegetarian Caesar Salad",
+        "description": "A vegetarian version of the classic Caesar salad made with fresh lettuce, hard-boiled eggs, shaved Parmesan cheese, and a creamy dressing.",
+        "imageURL": "https://media.istockphoto.com/id/184938052/photo/a-bowl-of-caesar-salad-with-croutons-and-cheese-on-table.jpg?s=612x612&w=0&k=20&c=zkzYRZzIHz1F2SH7F7ikWIitQiczmTXxA4-PBKj5Ycc="
+    }
+]
