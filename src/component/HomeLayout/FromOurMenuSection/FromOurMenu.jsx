@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import SectionTitel from '../../ShareLayout/SectionTitle/SectionTitel';
 import MenuitemCard from '../../ShareLayout/MenuItemCard/MenuitemCard';
 import useMenu from '../../../CustomHooks/useMenu';
