@@ -9,6 +9,9 @@ import {
 import ErrorPage from './component/ErrorPage/ErrorPage.jsx';
 import Home from './component/HomeLayout/Home.jsx';
 
+import { HelmetProvider } from 'react-helmet-async';
+import OurMenuHome from './component/OurMenuPageLayout/OurMenuHome.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/ourMenu',
+        element: <OurMenuHome />
       }
     ]
   },
@@ -27,8 +34,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='max-w-screen-xl mx-auto'>
-      <RouterProvider router={router} />
-    </div>
+    <HelmetProvider>
+      <div className='max-w-screen-xl mx-auto'>
+        <RouterProvider router={router} />
+      </div>
+    </HelmetProvider>
   </React.StrictMode >
 )

@@ -3,7 +3,7 @@ import img from "../../../assets/assets/home/chef-service.jpg"
 
 const FeedBack = () => {
     return (
-        <div>
+        <>
             <div className="hero my-24 py-16 px-16 " style={{ backgroundImage: `url(${img})` }}>
 
 
@@ -16,7 +16,7 @@ const FeedBack = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

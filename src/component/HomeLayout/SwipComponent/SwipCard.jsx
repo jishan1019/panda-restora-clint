@@ -22,8 +22,6 @@ const SwipCard = () => {
 
             >
             </SectionTitel>
-
-
             <Swiper
                 slidesPerView={4}
                 spaceBetween={30}
@@ -33,6 +31,7 @@ const SwipCard = () => {
                 }}
                 modules={[Pagination]}
                 className="mySwiper"
+                initialSlide={2}
             >
                 <SwiperSlide>
                     <img src={img1} alt="" />
