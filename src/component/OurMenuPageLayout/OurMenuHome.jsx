@@ -3,10 +3,16 @@ import { Helmet } from 'react-helmet-async';
 import CoverMenu from '../ShareLayout/CoverMenu/CoverMenu';
 import img from "../../assets/assets/menu/banner3.jpg"
 import FromOurMenu from '../HomeLayout/FromOurMenuSection/FromOurMenu';
-import img1 from "../../assets/assets/home/chef-service.jpg"
 import useMenu from '../../CustomHooks/useMenu';
 import SectionTitel from '../ShareLayout/SectionTitle/SectionTitel';
 import MenuitemCard from '../ShareLayout/MenuItemCard/MenuitemCard';
+import img1 from "../../assets/assets/menu/dessert-bg.jpeg"
+import img2 from "../../assets/assets/menu/pizza-bg.jpg"
+import img3 from "../../assets/assets/menu/salad-bg.jpg"
+import img4 from "../../assets/assets/menu/soup-bg.jpg"
+
+
+
 
 const OurMenuHome = () => {
 
@@ -62,7 +68,7 @@ const OurMenuHome = () => {
 
             {/* Pizza */}
             <CoverMenu
-                img={img1}
+                img={img2}
                 coverTitle="Pizza"
                 coverDescription="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             >
@@ -78,7 +84,7 @@ const OurMenuHome = () => {
 
             {/* Pizza */}
             <CoverMenu
-                img={img1}
+                img={img3}
                 coverTitle="SALADS"
                 coverDescription="Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
             >
