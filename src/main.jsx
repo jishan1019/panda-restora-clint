@@ -12,6 +12,8 @@ import Home from './component/HomeLayout/Home.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import OurMenuHome from './component/OurMenuPageLayout/OurMenuHome.jsx';
 import OrderFoodHome from './component/OrderFoodLayout/OrderFoodHome.jsx';
+import Login from './component/LoginRegestationLayoout/Login/Login.jsx';
+import Regestation from './component/LoginRegestationLayoout/Regestation/Regestation.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,7 +33,16 @@ const router = createBrowserRouter([
       {
         path: '/orderFood',
         element: <OrderFoodHome />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/regestation',
+        element: <Regestation />
       }
+
     ]
   },
 ]);

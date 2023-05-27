@@ -12,7 +12,7 @@ const OrderCard = ({ item }) => {
                     <p>{recipe}</p>
                     <p className='mt-2 font-semibold'>Prise: ${price}</p>
                     <div className="card-actions mt-4 justify-center">
-                        <button className="btn btn-primary bg-[#1F2937]">Add To Cart</button>
+                        <button className="btn btn-outline bg-slate-200 border-orange-400 border-0 border-b-4 hover:bg-[#1F2937]">Add To Cart</button>
                     </div>
                 </div>
             </div>
