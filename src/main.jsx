@@ -14,6 +14,7 @@ import OurMenuHome from './component/OurMenuPageLayout/OurMenuHome.jsx';
 import OrderFoodHome from './component/OrderFoodLayout/OrderFoodHome.jsx';
 import Login from './component/LoginRegestationLayoout/Login/Login.jsx';
 import Regestation from './component/LoginRegestationLayoout/Regestation/Regestation.jsx';
+import AuthProvider from './component/Provider/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -50,10 +51,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <div className='max-w-screen-xl mx-auto'>
-        <RouterProvider router={router} />
-      </div>
-    </HelmetProvider>
+    <AuthProvider>
+      <HelmetProvider>
+        <div className='max-w-screen-xl mx-auto'>
+          <RouterProvider router={router} />
+        </div>
+      </HelmetProvider>
+    </AuthProvider>
   </React.StrictMode >
 )

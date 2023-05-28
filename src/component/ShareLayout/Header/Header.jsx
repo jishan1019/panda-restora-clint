@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+
 
 const Header = () => {
+
+    const { user, logout } = useContext(AuthContext);
+
+    const handelLogout = () => {
+        logout()
+            .then(() => {
+
+            })
+            .catch(error => console.log(error))
+    }
 
     const navOption = <>
         <li>
@@ -19,9 +31,16 @@ const Header = () => {
         <li>
             <Link to="/">CONTACT US</Link>
         </li>
-        <li>
-            <Link to="/login">LOGIN</Link>
-        </li>
+
+
+        {
+            user ?
+                <li onClick={handelLogout} className='mt-[10px] text-[19px]'>Logout</li>
+                :
+                <li>
+                    <Link to="/login">LOGIN</Link>
+                </li>
+        }
 
 
     </>

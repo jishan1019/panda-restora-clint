@@ -3,12 +3,37 @@ import { useForm } from "react-hook-form";
 import img from "../../../assets/assets/others/authentication.png"
 import img1 from "../../../assets/assets/others/authentication2.png"
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 
 const Regestation = () => {
 
+    const { createUser } = useContext(AuthContext);
+
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const email = data?.email;
+        const password = data?.password;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                Swal.fire(
+                    'Regestation Success!',
+                    'Go Back',
+                    'success'
+                )
+            }).catch(error => {
+                Swal.fire(
+                    'Regestation Fail!',
+                    `${error}`,
+                    'info'
+                )
+            })
+    };
+
 
 
     return (
@@ -16,7 +41,7 @@ const Regestation = () => {
             <div className="hero min-h-[80vh] mt-16" style={{ backgroundImage: `url(${img})` }}>
                 <div className="hero-overlay bg-opacity-0"></div>
                 <div className="hero-content text-center text-neutral-content">
-                    <div className="w-full flex justify-center items-center md:flex-row flex-col p-4">
+                    <div className="w-full flex justify-center items-center md:flex-row flex-col-reverse p-8">
 
 
                         <div className='w-full space-y-4  md:w-[50%] text-black'>
@@ -24,9 +49,9 @@ const Regestation = () => {
                             <h1 className='mb-8 mt-8 md:mt-0 font-bold text-3xl'>Regestation</h1>
 
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input className='bg-white w-full p-4 rounded-md block' placeholder='Enter Your Name'  {...register("name")} />
+                                <input className='bg-white w-full p-4 rounded-md block' placeholder='Enter Your Name'  {...register("name", { required: true })} />
 
-                                <input className='bg-white w-full p-4 rounded-md block mt-6' placeholder='Enter Your Email'  {...register("email")} />
+                                <input className='bg-white w-full p-4 rounded-md block mt-6' placeholder='Enter Your Email'  {...register("email", { required: true })} />
 
 
                                 <input className='bg-white w-full p-4 rounded-md block mt-6' placeholder='Enter Your Password' {...register("password", { required: true })} />
