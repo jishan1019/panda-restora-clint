@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import img from "../../../assets/assets/others/authentication.png"
 import img1 from "../../../assets/assets/others/authentication2.png"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
@@ -10,21 +10,33 @@ import Swal from 'sweetalert2'
 
 const Regestation = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         const email = data?.email;
         const password = data?.password;
+
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                Swal.fire(
-                    'Regestation Success!',
-                    'Go Back',
-                    'success'
-                )
+                updateUserProfile(data.name, data.photoURL)
+                    .then(() => {
+                        reset();
+                        Swal.fire(
+                            'Regestation Success!',
+                            'Go Back',
+                            'success'
+                        )
+                        navigate('/');
+
+                    })
+                    .catch(error => console.log(error))
+
+
+
             }).catch(error => {
                 Swal.fire(
                     'Regestation Fail!',
@@ -55,6 +67,11 @@ const Regestation = () => {
 
 
                                 <input className='bg-white w-full p-4 rounded-md block mt-6' placeholder='Enter Your Password' {...register("password", { required: true })} />
+
+
+                                <input className='bg-white w-full p-4 rounded-md block mt-6' placeholder='Enter Your Photo Url' {...register("photoURL", { required: true })} />
+
+
 
                                 {errors.exampleRequired && <span>This field is required</span>}
 

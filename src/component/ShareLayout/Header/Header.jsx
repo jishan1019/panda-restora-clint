@@ -32,17 +32,6 @@ const Header = () => {
             <Link to="/">CONTACT US</Link>
         </li>
 
-
-        {
-            user ?
-                <li onClick={handelLogout} className='mt-[10px] text-[19px]'>Logout</li>
-                :
-                <li>
-                    <Link to="/login">LOGIN</Link>
-                </li>
-        }
-
-
     </>
 
 
@@ -70,7 +59,20 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                    <a className="btn ">Get started</a>
+
+                    {
+                        user ?
+                            <div className='flex justify-center items-center space-x-3'>
+                                <img className='h-12 w-12 rounded-full' src={`${user.photoURL}`} alt="" />
+                                <a onClick={handelLogout} className="btn">Logout</a>
+                            </div>
+                            :
+                            <button onClick={handelLogout} className="btn ">
+                                <Link to="/login">Login</Link>
+                            </button>
+                    }
+
+
                 </div>
             </div>
         </div>
