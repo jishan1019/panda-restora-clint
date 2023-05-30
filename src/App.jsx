@@ -5,6 +5,12 @@ import Header from './component/ShareLayout/Header/Header'
 
 function App() {
 
+
+  // All Instrall Pacakge------------------------------
+  // 1.React Icon: npm install react - icons--save
+
+
+
   const location = useLocation();
 
   const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('regestation');;

@@ -6,7 +6,7 @@ const ChefRecomand = () => {
     const [chefData, setChefData] = useState([]);
 
     useEffect(() => {
-        fetch('chefRecommand.json')
+        fetch('http://localhost:4000/chefRecomand')
             .then(res => res.json())
             .then(data => setChefData(data))
 

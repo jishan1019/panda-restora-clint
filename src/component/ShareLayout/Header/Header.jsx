@@ -1,16 +1,17 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from '../../../CustomHooks/useCart';
 
 
 const Header = () => {
-
     const { user, logout } = useContext(AuthContext);
+    const [cart] = useCart();
 
     const handelLogout = () => {
         logout()
             .then(() => {
-
             })
             .catch(error => console.log(error))
     }
@@ -19,9 +20,11 @@ const Header = () => {
         <li>
             <Link to="/">HOME</Link>
         </li>
-        <li>
-            <Link to="/">DASHBOARD</Link>
-        </li>
+        {
+            user && <li>
+                <Link to="/dashboard/myCart">DASHBOARD</Link>
+            </li>
+        }
         <li>
             <Link to="/ourMenu">OUR MENU</Link>
         </li>
@@ -30,6 +33,14 @@ const Header = () => {
         </li>
         <li>
             <Link to="/">CONTACT US</Link>
+        </li>
+        <li>
+            <Link to='/dashboard/myCart'>
+                <button className="btn gap-1 btn-outline border-none">
+                    <FaShoppingCart className='text-white h-5 w-5' />
+                    <div className="badge badge-secondary">+{cart?.length || 0}</div>
+                </button>
+            </Link>
         </li>
 
     </>
@@ -64,10 +75,10 @@ const Header = () => {
                         user ?
                             <div className='flex justify-center items-center space-x-3'>
                                 <img className='h-12 w-12 rounded-full' src={`${user.photoURL}`} alt="" />
-                                <a onClick={handelLogout} className="btn">Logout</a>
+                                <a onClick={handelLogout} className="btn btn-outline text-white border-none">Logout</a>
                             </div>
                             :
-                            <button onClick={handelLogout} className="btn ">
+                            <button onClick={handelLogout} className="btn btn-outline text-white border-none ">
                                 <Link to="/login">Login</Link>
                             </button>
                     }
