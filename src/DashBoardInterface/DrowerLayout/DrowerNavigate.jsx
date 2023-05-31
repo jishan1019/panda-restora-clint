@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { FaShoppingCart, FaWallet, FaCalendar, FaHome, FaComment } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -22,59 +22,99 @@ const DrowerNavigate = () => {
                     </li>
 
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaHome />
                             User Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/dashboard/myCart'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaShoppingCart />
                             My Cart
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaCalendar />
                             Reservation
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaWallet />
                             Payment History
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <div className="bg-white rounded-md h-[2px] divider"></div>
 
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaHome />
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <GiHamburgerMenu />
                             Menu
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaShoppingCart />
                             Shop
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to='/'>
+                        <NavLink
+                            to='/'
+                            aria-label='Home'
+                            title='Home'
+                            className={({ isActive }) => (isActive ? 'active font-bold text-white bg-[#FF7F0E]' : '')}
+                        >
                             <FaComment />
                             Contact
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <div className="bg-white rounded-md h-[2px] divider"></div>

@@ -6,8 +6,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
+
 
     const captchaRef = useRef(null)
     const [disabled, setDesabled] = useState(true);
@@ -58,6 +60,9 @@ const Login = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Bistro | Login</title>
+            </Helmet>
             <div className="hero min-h-[80vh] mt-16" style={{ backgroundImage: `url(${img})` }}>
                 <div className="hero-overlay bg-opacity-0"></div>
                 <div className="hero-content text-center text-neutral-content">

@@ -6,9 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet-async';
 
 
 const Regestation = () => {
+
 
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -50,6 +52,9 @@ const Regestation = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Bistro | Regestation</title>
+            </Helmet>
             <div className="hero min-h-[80vh] mt-16" style={{ backgroundImage: `url(${img})` }}>
                 <div className="hero-overlay bg-opacity-0"></div>
                 <div className="hero-content text-center text-neutral-content">
