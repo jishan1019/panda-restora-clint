@@ -3,10 +3,12 @@ import { RiDeleteBinLine } from 'react-icons/ri';
 
 
 
-const TableBody = ({ item, index }) => {
+const TableBody = ({ item, index,handelDelete }) => {
 
-    const { image, name, price } = item || {};
+    const { image, name, price, _id } = item || {};
     const formatedPrise = price.toFixed(2)
+
+  
 
 
     return (
@@ -26,7 +28,7 @@ const TableBody = ({ item, index }) => {
             </td>
             <td>${formatedPrise}</td>
             <th>
-                <button className="btn bg-[#FF7F0E] text-white border-none text-xl">
+                <button onClick={()=>handelDelete(_id)} className="btn bg-[#FF7F0E] text-white border-none text-xl">
                     <RiDeleteBinLine />
                 </button>
             </th>

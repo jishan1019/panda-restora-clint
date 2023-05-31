@@ -1,7 +1,7 @@
 import React from 'react';
 import TableBody from '../TableBody/TableBody';
 
-const TableHead = ({ cart }) => {
+const TableHead = ({ cart,handelDelete }) => {
     return (
         <div className="overflow-x-auto w-full mt-8 ">
             <table className="table w-full ">
@@ -22,6 +22,7 @@ const TableHead = ({ cart }) => {
                             key={item._id}
                             item={item}
                             index={index}
+                            handelDelete={handelDelete}
                         />)
                     }
                 </tbody>
