@@ -9,7 +9,8 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const Regestation = () => {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleSignIn } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const {
@@ -18,6 +19,7 @@ const Regestation = () => {
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     const email = data?.email;
     const password = data?.password;
@@ -57,6 +59,16 @@ const Regestation = () => {
       .catch((error) => {
         Swal.fire("Regestation Fail!", `${error}`, "info");
       });
+  };
+
+  const handelGoogleSignin = () => {
+    googleSignIn().then((result) => {
+      const user = result.user;
+      if (user) {
+        Swal.fire("Registration Success!", "Go Back", "success");
+        navigate("/");
+      }
+    });
   };
 
   return (
@@ -117,7 +129,10 @@ const Regestation = () => {
               <p>Or Sign in With</p>
 
               <div className="flex justify-center items-center space-x-3">
-                <button className="btn btn-circle btn-outline">
+                <button
+                  onClick={handelGoogleSignin}
+                  className="btn btn-circle btn-outline"
+                >
                   <img
                     className="p-1"
                     src="https://i.ibb.co/NY7LtWM/images-removebg-preview.png"
