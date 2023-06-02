@@ -64,9 +64,29 @@ const Regestation = () => {
   const handelGoogleSignin = () => {
     googleSignIn().then((result) => {
       const user = result.user;
+
       if (user) {
-        Swal.fire("Registration Success!", "Go Back", "success");
-        navigate("/");
+        // Swal.fire("Registration Success!", "Go Back", "success");
+        // navigate("/");
+
+        const saveUser = { name: user?.displayName, email: user?.email };
+
+        fetch("http://localhost:4000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            reset();
+            Swal.fire("Registration Success!", "Go Back", "success");
+            navigate("/");
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
       }
     });
   };
